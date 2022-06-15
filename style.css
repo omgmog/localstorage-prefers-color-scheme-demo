@@ -7,7 +7,14 @@
   --toggleLightDisplay: block;
   --toggleDarkDisplay: none; }
 
-[data-prefers-color-scheme="light"] {
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff;
+    --color: #111;
+    --linkColor: blue;
+    --toggleLightDisplay: block;
+    --toggleDarkDisplay: none; } }
+:root[data-prefers-color-scheme="light"] {
   --background-color: #fff;
   --color: #111;
   --linkColor: blue;
@@ -22,7 +29,7 @@
     --linkColor: yellow;
     --toggleLightDisplay: none;
     --toggleDarkDisplay: block; } }
-[data-prefers-color-scheme="dark"] {
+:root[data-prefers-color-scheme="dark"] {
   --background-color: #111;
   --color: #eee;
   --linkColor: yellow;

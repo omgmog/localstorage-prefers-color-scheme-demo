@@ -22,7 +22,12 @@
 :root {
     @include light_color_scheme;
 }
-[data-prefers-color-scheme="light"] {
+@media (prefers-color-scheme: light) {
+    :root {
+        @include light_color_scheme;
+    }
+}
+:root[data-prefers-color-scheme="light"] {
     @include light_color_scheme;
 }
 
@@ -32,7 +37,7 @@
         @include dark_color_scheme;
     }
 }
-[data-prefers-color-scheme="dark"] {
+:root[data-prefers-color-scheme="dark"] {
     @include dark_color_scheme;
 }
 
