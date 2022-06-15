@@ -8,22 +8,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="set-color-scheme"><span class="light">🌞</span><span class="dark">🌛</span></button>
+    <button class="set-color-scheme" role="switch" aria-label="Toggle color scheme" title="Toggle color scheme"><span class="light">🌞</span><span class="dark">🌛</span></button>
     <p>Click the sun/moon to toggle between light/dark mode.<br>This uses localStorage to persist your preference.</p>
     <p>Made with 💕 by <a href="https://omgmog.net">Max Glenister</a> &bull; <a href="https://github.com/omgmog/localstorage-prefers-color-scheme-demo" target="_blank">Source on Github</a></p>
 
-    <script>
-        const browser_color_preference = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const color_preference = localStorage.getItem('color-preference') || browser_color_preference;
-
-        document.documentElement.dataset.prefersColorScheme = color_preference;
-        localStorage.setItem('color-preference', color_preference);
-
-        document.querySelector('.set-color-scheme').addEventListener('click', e => {
-            const new_color_preference = localStorage.getItem('color-preference') === 'dark' ? 'light' : 'dark';
-            document.documentElement.dataset.prefersColorScheme = new_color_preference;
-            localStorage.setItem('color-preference', new_color_preference);
-        });
-    </script>
+    <script src="color-scheme.js"></script>
 </body>
 </html>
