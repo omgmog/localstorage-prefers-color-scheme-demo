@@ -1,0 +1,55 @@
+/* Set up variables based on browser preference, and user cookie preference */
+/* Light */
+:root {
+  --background-color: #fff;
+  --color: #111;
+  --toggleLightDisplay: block;
+  --toggleDarkDisplay: none; }
+
+[data-prefers-color-scheme="light"] {
+  --background-color: #fff;
+  --color: #111;
+  --toggleLightDisplay: block;
+  --toggleDarkDisplay: none; }
+
+/* Dark */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #111;
+    --color: #eee;
+    --toggleLightDisplay: none;
+    --toggleDarkDisplay: block; } }
+[data-prefers-color-scheme="dark"] {
+  --background-color: #111;
+  --color: #eee;
+  --toggleLightDisplay: none;
+  --toggleDarkDisplay: block; }
+
+/* Style the toggle control */
+.set-color-scheme .light {
+  display: var(--toggleLightDisplay); }
+
+.set-color-scheme .dark {
+  display: var(--toggleDarkDisplay); }
+
+/* Use the color scheme */
+body {
+  background-color: var(--background-color);
+  color: var(--color); }
+
+/* Extra styles for the demo */
+.set-color-scheme {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  cursor: pointer; }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */

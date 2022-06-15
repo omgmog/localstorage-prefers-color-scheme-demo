@@ -1,0 +1,53 @@
+/* Set up variables based on browser preference, and user cookie preference */
+
+@mixin light_color_scheme {
+    --background-color: #fff;
+    --color: #111;
+
+    --toggleLightDisplay: block;
+    --toggleDarkDisplay: none;
+}
+@mixin dark_color_scheme {
+    --background-color: #111;
+    --color: #eee;
+
+    --toggleLightDisplay: none;
+    --toggleDarkDisplay: block;
+}
+
+
+/* Light */
+:root {
+    @include light_color_scheme;
+}
+[data-prefers-color-scheme="light"] {
+    @include light_color_scheme;
+}
+
+/* Dark */
+@media (prefers-color-scheme: dark) {
+    :root {
+        @include dark_color_scheme;
+    }
+}
+[data-prefers-color-scheme="dark"] {
+    @include dark_color_scheme;
+}
+
+/* Style the toggle control */        
+.set-color-scheme .light { 
+    display: var(--toggleLightDisplay);
+}
+.set-color-scheme .dark { 
+    display: var(--toggleDarkDisplay);
+}
+/* Use the color scheme */
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+
+/* Extra styles for the demo */
+.set-color-scheme { font-size: 4rem; background: none; border: none; cursor: pointer;}
+body { display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; margin: 0;}
