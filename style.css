@@ -3,12 +3,14 @@
 :root {
   --background-color: #fff;
   --color: #111;
+  --linkColor: blue;
   --toggleLightDisplay: block;
   --toggleDarkDisplay: none; }
 
 [data-prefers-color-scheme="light"] {
   --background-color: #fff;
   --color: #111;
+  --linkColor: blue;
   --toggleLightDisplay: block;
   --toggleDarkDisplay: none; }
 
@@ -17,11 +19,13 @@
   :root {
     --background-color: #111;
     --color: #eee;
+    --linkColor: yellow;
     --toggleLightDisplay: none;
     --toggleDarkDisplay: block; } }
 [data-prefers-color-scheme="dark"] {
   --background-color: #111;
   --color: #eee;
+  --linkColor: yellow;
   --toggleLightDisplay: none;
   --toggleDarkDisplay: block; }
 
@@ -37,6 +41,12 @@ body {
   background-color: var(--background-color);
   color: var(--color); }
 
+p {
+  max-width: 30rem; }
+
+a {
+  color: var(--linkColor); }
+
 /* Extra styles for the demo */
 .set-color-scheme {
   font-size: 4rem;
@@ -45,9 +55,12 @@ body {
   cursor: pointer; }
 
 body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   margin: 0; }
